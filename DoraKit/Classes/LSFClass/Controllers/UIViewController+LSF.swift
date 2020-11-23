@@ -9,9 +9,9 @@
 import UIKit
 
 
-protocol StoryboardProtol { }
-extension StoryboardProtol where Self: UIViewController {
-    static func lsf_storyboardContrller(_ storyboardName: String, identifier: String? = nil) -> Self {
+public protocol StoryboardProtol { }
+public extension StoryboardProtol where Self: UIViewController {
+    static func lsf_storyboard(_ storyboardName: String, identifier: String? = nil) -> Self {
         
         let storyboard = UIStoryboard.init(name: storyboardName, bundle: nil)
         
@@ -26,10 +26,10 @@ extension StoryboardProtol where Self: UIViewController {
 
 extension UIViewController: StoryboardProtol {}
 
-extension UIViewController{
+public extension UIViewController{
     
     ///获取当前显示的VC
-    public static func lsf_currentVC() -> UIViewController? {
+    static func lsf_currentVC() -> UIViewController? {
         var result: UIViewController?
         
         var window = UIApplication.shared.keyWindow

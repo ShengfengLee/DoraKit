@@ -18,7 +18,7 @@ public extension BarButtonItemable where Self: UIViewController {
     //导航栏按钮
     func getBarButtonItem(_ title: String? = nil,
                                  imageNamed: String? = nil,
-                                 tintColor: UIColor? = UIColor.lsf_color16(0x999999),
+                                 tintColor: UIColor? = nil,
                                  block: VoidBlock? = nil) -> UIBarButtonItem {
         let barItem = UIBarButtonItem.init()
         
@@ -59,7 +59,7 @@ public extension BarButtonItemable where Self: UIViewController {
 public extension BarButtonItemable where Self: UIViewController {
     ///返回按钮
     func setLeftItem(title: String? = nil,
-                     imageNamed: String? = "btn_back_gray",
+                     imageNamed: String? = "zl_navBack.png",
                      tintColor: UIColor? = nil,
                      navigationItem: UINavigationItem? = nil,
                      block: VoidBlock? = nil) {

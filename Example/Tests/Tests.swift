@@ -14,6 +14,9 @@ class Tests: XCTestCase {
     }
     
     func testExample() {
+        
+        let time = Date().lsf_formate("yyyy-MM-dd hh:mm:Ss")
+        print(time)
         // This is an example of a functional test case.
         XCTAssert(true, "Pass")
     }

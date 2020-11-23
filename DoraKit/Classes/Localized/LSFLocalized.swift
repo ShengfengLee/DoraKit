@@ -1,6 +1,6 @@
 //
 //  LSFLocalized.swift
-//  iOS_ Template
+//  VideoParse
 //
 //  Created by lishengfeng on 2020/11/7.
 //
