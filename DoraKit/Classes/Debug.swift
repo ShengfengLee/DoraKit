@@ -19,7 +19,7 @@ public func dprint<T>(_ message: T,
                rowCount: Int = #line) {
     #if DEBUG
     let fileName = (filePath as NSString).lastPathComponent.replacingOccurrences(of: ".swift", with: "")
-    let date = Date().lsf_formate("MM/dd HH:mm:ss")
+    let date = Date().dora_formate("MM/dd HH:mm:ss")
     print(fileName + ":" + method + "/" + "\(rowCount)" + "[" + date + "]" + " \(message)" + "\n")
     #endif
 }

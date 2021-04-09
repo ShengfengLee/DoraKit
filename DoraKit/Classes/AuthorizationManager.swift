@@ -81,7 +81,7 @@ public class AuthorizationManager: NSObject {
     ///
     /// - Returns: true有定位权限  false没有定位权限
     class func locationAuthorization(presentVC: UIViewController? = nil) -> Bool {
-        let locationStatus = LSFLocationManager.shared.authorizationStatus()
+        let locationStatus = DoraLocationManager.shared.authorizationStatus()
         dprint("位置授权状态: \(locationStatus.rawValue) ...")
         var authorized = false
         switch locationStatus {
@@ -89,7 +89,7 @@ public class AuthorizationManager: NSObject {
             dprint("应用有定位权限...")
             //获取定位数据
             //YLLocationManager.shared.loadLocation()
-            LSFLocationManager.shared.startLocation { (location, placemark, error) in
+            DoraLocationManager.shared.startLocation { (location, placemark, error) in
                 
             }
             authorized = true
@@ -100,7 +100,7 @@ public class AuthorizationManager: NSObject {
             
     //        YLLocationManager.startUpdatingLocation()
             
-            LSFLocationManager.shared.startLocation { (location, placemark, error) in
+            DoraLocationManager.shared.startLocation { (location, placemark, error) in
                 
             }
             authorized = false
@@ -235,37 +235,37 @@ public class AuthorizationManager: NSObject {
 public extension AuthorizationManager {
     
     ///麦克风未授权，弹框
-    class func showMicphoneUnAuthorizedAlert(presentVC: UIViewController? = UIViewController.lsf_currentVC()) {
+    class func showMicphoneUnAuthorizedAlert(presentVC: UIViewController? = UIViewController.dora_currentVC()) {
         
         
         showAuthAlertController(title: nil,
-                                message: LSFLocalized.string("authorization.goSettingOpenMicroPhoneDesc"),
+                                message: DoraLocalized.string("authorization.goSettingOpenMicroPhoneDesc"),
                                 presentController: presentVC)
         
     }
     
     
     ///定位未授权，弹框
-    class func showLocationUnAuthorizedAlert(presentVC: UIViewController? = UIViewController.lsf_currentVC()) {
+    class func showLocationUnAuthorizedAlert(presentVC: UIViewController? = UIViewController.dora_currentVC()) {
         showAuthAlertController(title: nil,
-                                message: LSFLocalized.string("authorization.goSettingOpenLocationDesc"),
+                                message: DoraLocalized.string("authorization.goSettingOpenLocationDesc"),
                                 presentController: presentVC)
     }
     
     
     ///相机相册未授权，弹框
-    class func showPhotoCameraUnAuthorizedAlert(presentVC: UIViewController? = UIViewController.lsf_currentVC()) {
+    class func showPhotoCameraUnAuthorizedAlert(presentVC: UIViewController? = UIViewController.dora_currentVC()) {
         showAuthAlertController(title: nil,
-                                message: LSFLocalized.string("authorization.goSettingOpenAlbumCamera"),
+                                message: DoraLocalized.string("authorization.goSettingOpenAlbumCamera"),
                                 presentController: presentVC)
     }
     
     ///网络未授权，弹框
     class func showNetworkingUnAuthorizedAlert(presentVC: UIViewController?) {
         DispatchQueue.main.async {
-            let presentVC = presentVC ?? UIViewController.lsf_currentVC()
-            showAuthAlertController(title: LSFLocalized.string("str.NetworkConnectionFailed"),
-                                    message: LSFLocalized.string("authorization.networkingDesc"),
+            let presentVC = presentVC ?? UIViewController.dora_currentVC()
+            showAuthAlertController(title: DoraLocalized.string("str.NetworkConnectionFailed"),
+                                    message: DoraLocalized.string("authorization.networkingDesc"),
                                     presentController: presentVC)
         }
     }
@@ -282,10 +282,10 @@ public extension AuthorizationManager {
             return
         }
         
-        let goSetting = LSFLocalized.string("authorization.goSettings")
-        let cancel = LSFLocalized.string("str.Cancel")
+        let goSetting = DoraLocalized.string("authorization.goSettings")
+        let cancel = DoraLocalized.string("str.Cancel")
         
-        lsf_alert(title, message: message, viewController: controller, actionTitles: [goSetting], cancelTitle: cancel) { (title, _) in
+        dora_alert(title, message: message, viewController: controller, actionTitles: [goSetting], cancelTitle: cancel) { (title, _) in
             if title == goSetting {
                 let settingUrl = UIApplication.openSettingsURLString
                 if let url = URL(string: settingUrl) {

@@ -1,6 +1,6 @@
 //
 //  SideslipViewController.swift
-//  Pods-SwiftLSF_Example
+//  Pods-SwiftDora_Example
 //
 //  Created by 李胜锋 on 2018/1/29.
 //

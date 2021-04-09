@@ -1,0 +1,38 @@
+{
+  "name": "DoraKit",
+  "version": "0.1.0",
+  "summary": "一些常用Swift基础扩展库.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/ShengfengLee/DoraKit",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "ShengfengLee": "389933523@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/ShengfengLee/DoraKit.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "swift_versions": "5.0",
+  "source_files": "DoraKit/Classes/**/*",
+  "dependencies": {
+    "SnapKit": [
+
+    ],
+    "RxSwift": [
+
+    ],
+    "RxCocoa": [
+
+    ],
+    "NSObject+Rx": [
+
+    ]
+  },
+  "swift_version": "5.0"
+}
