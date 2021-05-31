@@ -31,9 +31,8 @@ public extension UIView {
     static func dora_safeAreaInsets() -> UIEdgeInsets{
         var edge: UIEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         if #available(iOS 11.0, *) {
-            if let window = UIApplication.shared.keyWindow {
-                edge = window.safeAreaInsets
-            }
+            let window = UIApplication.shared.keyWindow ?? UIWindow()
+            edge = window.safeAreaInsets
         }
         
         return edge
